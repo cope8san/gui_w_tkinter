@@ -1,11 +1,17 @@
 import tkinter as tk
 from tkinter import ttk
 
+try:
+    from ctypes import windll
+    windll.shcore.SetProcessDpiAwareness(1)
+except:
+    pass
+
 def greet():
     print(f"Hello, {user_name.get() or 'World'}")
 
 root = tk.Tk()
-root.title("Greeter")
+root.title("ご挨拶")
 
 root.columnconfigure(0, weight=1)
 
